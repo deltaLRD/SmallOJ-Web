@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="G1y7S-FvWjsbphqNmD9A" name="第 1 页">
+        <mxGraphModel dx="752" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="100" width="640" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="40" width="640" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;logo&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="45" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="用户名+下拉菜单" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="50" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="公告" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=24;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="主页" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=24;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="题库" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=24;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="帮助" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=24;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="100" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;b&gt;&lt;font style=&quot;font-size: 48px;&quot;&gt;常见问题及解答&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="180" width="640" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Q:问题&lt;br&gt;A:解答&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=48;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="270" width="640" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Q:问题&lt;br&gt;A:解答&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=48;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="600" width="640" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Q:问题&lt;br&gt;A:解答&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=48;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="490" width="640" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Q:问题&lt;br&gt;A:解答&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=48;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="380" width="640" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
