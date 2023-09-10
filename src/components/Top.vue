@@ -3,8 +3,8 @@
       <img src="../assets/vue.svg"/>
     </div>
     <div v-else>
-      <RouterLink to="/login">Login</RouterLink>&nbsp;
-      <RouterLink to="/register">Rsgister</RouterLink>
+      <RouterLink to="/login" class="link-style">Login</RouterLink>&nbsp;
+      <RouterLink to="/register" class="link-style">Register</RouterLink>
     </div>
  
 </template>
