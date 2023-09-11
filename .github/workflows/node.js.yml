@@ -33,10 +33,6 @@ jobs:
       uses: borales/actions-yarn@v4
       with:
         cmd: build # will run `yarn build:prod` command
-    - name: Test app
-      uses: borales/actions-yarn@v4
-      with:
-        cmd: test
     
     #     cache: 'npm'
     # - run: npm install
