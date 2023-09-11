@@ -1,8 +1,8 @@
 <template>
-  <RouterLink to="/homepage">Homepage</RouterLink>&nbsp;
-  <RouterLink to="/question_bank">Question_Bank</RouterLink>&nbsp;
-  <RouterLink to="/announcement">Announcement</RouterLink>&nbsp;
-  <RouterLink to="/help">Help</RouterLink>
+  <RouterLink to="/homepage" class="link-style">Homepage</RouterLink>&nbsp;
+  <RouterLink to="/question_bank" class="link-style">Question_Bank</RouterLink>&nbsp;
+  <RouterLink to="/announcement" class="link-style">Announcement</RouterLink>&nbsp;
+  <RouterLink to="/help" class="link-style">Help</RouterLink>
   
 </template>
   
