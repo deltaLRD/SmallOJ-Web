@@ -18,7 +18,10 @@
                     </td>
                     <td>
                         <RouterLink to="/question_bank/question_description" class="link-style" 
-                            @click="storeItemID(item.id)">{{ item.description }}</RouterLink>
+                            @click="storeItemID(item.id)">
+                            <a>{{ item.name }}</a>
+                            <a style="float:right">{{ item.level }}</a>
+                        </RouterLink>
                     </td>
                     <td>
                         <RouterLink to="/question_bank/submit" class="link-style"
@@ -38,20 +41,18 @@ const { cookies } = useCookies();
 export default {
     data() {
         return {
-            tableData: [
-                {
-                    id: 0,
-                    link: '',
-                    description: '题目一',
-                },
-                {
-                    id: 1,
-                    link: '',
-                    description: '题目二',
-                },
-            ],
+            tableData: [ ],
         };
     },
+    created:function() {
+            this.$api.get('/api/problem/')
+                .then(response => {
+                    this.tableData = response.data.problems;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        },
     methods: {
         storeItemID(itemID) {
             this.setCookie('itemID', itemID, 7);

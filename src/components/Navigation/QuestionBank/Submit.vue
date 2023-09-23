@@ -3,22 +3,28 @@
     <form @submit.prevent="submitCode">
       <!-- 输入框 -->
       <div class="form-group">
-        <label for="numberInput">题目：</label>
+        <label for="numberInput" style="color: white;">题目：</label>
         <input type="number" id="numberInput" v-model.number="number" placeholder="" />
       </div>
 
       <!-- 下拉列表 -->
       <div class="form-group">
-        <label for="languageSelect">编程语言：</label>
+        <label for="languageSelect" style="color: white;">编程语言：</label>
         <select id="languageSelect" v-model="selectedLanguage">
-          <option value="python" >Python</option>
-          <option value="java">Java</option>
-          <option value="cpp">C++</option>
+          <option value="Python3">Python</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="C">C</option>
         </select>
+      </div>
+      <!-- 代码输入框 -->
+      <div>
+        <label for="codeInput" style="color: white;">提交代码:</label><br><br>
+        <textarea id="codeInput" v-model="code" rows="5" style="width:60%; height: 200px;"></textarea>
       </div>
 
       <!-- 提交按钮 -->
-      <button type="submit">提交</button>
+      <button type="submit" class="sub">提交</button>
     </form>
   </div>
 </template>
@@ -28,7 +34,8 @@ export default {
   data() {
     return {
       number: 0, // 输入框的默认值
-      selectedLanguage: 'cpp', // 下拉列表的默认值
+      selectedLanguage: 'C++', // 下拉列表的默认值
+      code: '', // 代码输入框的默认值
     };
   },
   created() {
@@ -42,9 +49,13 @@ export default {
   methods: {
     submitCode() {
       // 在这里添加提交代码的逻辑
+
+      if (this.number === '') window.alert('题目不能为空');
       console.log(this.number);
-      if (!this.number) window.alert('输入框为空');
+      console.log(this.code);
       // 可以将数据提交到后端或执行其他操作
+
+      this.code='';
     },
     getCookie(name) {
       const cookieValue = document.cookie
@@ -61,6 +72,21 @@ export default {
 /* 样式可以根据需要自定义 */
 .form-group {
   margin-bottom: 20px;
+}
+
+.sub {
+  color: white;
+  font-size: 30px;
+  width: 100px;
+  height: 70px;
+  background-color: gray;
+  border: 6px solid rgb(83, 83, 83);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sub:hover {
+  background-color: rgb(88, 88, 88);
 }
 </style>
   

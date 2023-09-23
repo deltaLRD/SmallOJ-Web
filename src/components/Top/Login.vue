@@ -39,8 +39,7 @@ export default {
           password: this.password
         })
           .then(response => {
-
-
+            console.log(response.data.token);
             window.alert('登录成功');
           })
           .catch(error => {

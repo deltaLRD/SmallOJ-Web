@@ -44,8 +44,8 @@
                 email: this.email,
 
             })
-                .then(response => {
-                    console.log(response);
+                .then(response=> {
+                    console.log(response.data.token);
                     window.alert('注册成功')
                     
             })
