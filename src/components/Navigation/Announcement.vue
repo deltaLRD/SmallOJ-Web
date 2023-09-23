@@ -1,7 +1,7 @@
 <template>
-    <h1>
+    <!-- <h1>
         Announcement
-    </h1>
+    </h1> -->
     <div v-for=" announcement in announcements" :key="announcement.id">
         <anc :announcement=announcement />
     </div>

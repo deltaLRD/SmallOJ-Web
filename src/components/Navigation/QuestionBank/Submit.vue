@@ -11,11 +11,9 @@
       <div class="form-group">
         <label for="languageSelect">编程语言：</label>
         <select id="languageSelect" v-model="selectedLanguage">
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
+          <option value="python" >Python</option>
           <option value="java">Java</option>
           <option value="cpp">C++</option>
-          <!-- 添加更多选项... -->
         </select>
       </div>
 
@@ -30,7 +28,7 @@ export default {
   data() {
     return {
       number: 0, // 输入框的默认值
-      selectedLanguage: 'javascript', // 下拉列表的默认值
+      selectedLanguage: 'cpp', // 下拉列表的默认值
     };
   },
   created() {

@@ -32,14 +32,20 @@
     },
     methods: {
         register() {
-        // // 这里可以添加登录逻辑
+        // 这里可以添加登录逻辑
         if(this.username.trim() ==='') this.errorMessage = '用户名不能为空';
         else if(this.password.trim() ==='') this.errorMessage = '密码不能为空';
         else if(this.email.trim() ==='') this.errorMessage = '邮箱不能为空';
         else {
             this.errorMessage = '';   // 清空错误信息
-            this.$api.post('/api/user/register')
+            this.$api.post('/api/user/register',{
+                username: this.username,
+                password: this.password,
+                email: this.email,
+
+            })
                 .then(response => {
+                    console.log(response);
                     window.alert('注册成功')
                     
             })
