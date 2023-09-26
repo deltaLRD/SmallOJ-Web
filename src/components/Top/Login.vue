@@ -17,7 +17,13 @@
 </template>
   
 <script>
+import { useCookies } from 'vue3-cookies';
+
 export default {
+  setup() {
+    const { cookies } = useCookies();
+    return { cookies };
+  },
   data() {
     return {
       username: '',
@@ -28,20 +34,25 @@ export default {
   methods: {
     login() {
       // // 这里可以添加登录逻辑
-
       if (this.username.trim() === '') this.errorMessage = '用户名不能为空';
       else if (this.password.trim() === '') this.errorMessage = '密码不能为空';
       else {
         this.errorMessage = '';   // 清空错误信息
         // 发送 GET 请求，只需要指定相对路径
         this.$api.get('/api/user/login', {
-          username: this.username,
-          password: this.password
+          params: {
+            username: this.username,
+            password: this.password
+          }
         })
           .then(response => {
-
-
-            window.alert('登录成功');
+            console.log(response.data);
+            this.cookies.set("userid", response.data.id);
+            if (response.data.status_code === "Success") {
+              window.alert('登录成功');
+            } else {
+              window.alert("登录失败\n" + response.data.status_msg);
+            }
           })
           .catch(error => {
             console.error(error);
@@ -57,4 +68,3 @@ export default {
   color: red;
 }
 </style>
-  

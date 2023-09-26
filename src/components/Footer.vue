@@ -11,7 +11,15 @@
 
 </template>
 
-<style scoped>
+<style>
+div{
+  text-align: left;
+  margin-top: 20px;
+}
 
+
+a:hover {
+  background: rgba(88, 88, 88, 0.8);
+}
 
 </style>

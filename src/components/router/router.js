@@ -13,6 +13,7 @@ import question_description from '../Navigation/Element/QueDescription.vue'
 
 const routes = [
     { path: '/', redirect: '/homepage' },
+    { path: '/question_bank', redirect: '/question_bank/questions'},
     { path: '/homepage', component: homepage },
     { path: '/announcement', component: announcement },
     { path: '/question_bank', component: question_bank,

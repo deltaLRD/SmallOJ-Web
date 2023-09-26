@@ -95,7 +95,7 @@ button:focus-visible {
 }
 
 .link-style {
-  color: rgb(92, 104, 145);
+  color: rgb(255, 255, 255);
   text-decoration: none; /* 可选，去掉下划线效果 */
 }
 
