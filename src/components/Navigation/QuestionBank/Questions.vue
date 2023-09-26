@@ -45,7 +45,12 @@ export default {
         };
     },
     created:function() {
-            this.$api.get('/api/problem/')
+            this.$api.get('/api/problem/', {
+                params:{
+                    page:1,
+                    pagesize:10,
+                }
+            })
                 .then(response => {
                     this.tableData = response.data.problems;
                 })
