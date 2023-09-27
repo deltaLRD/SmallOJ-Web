@@ -11,10 +11,10 @@
       <div class="form-group">
         <label for="languageSelect" style="color: white;">编程语言：</label>
         <select id="languageSelect" v-model="selectedLanguage">
-          <option value="Python3">Python</option>
-          <option value="Java">Java</option>
-          <option value="C++">C++</option>
-          <option value="C">C</option>
+          <option value="python3">Python</option>
+          <option value="java">Java</option>
+          <option value="c++">C++</option>
+          <option value="c">C</option>
         </select>
       </div>
       <!-- 代码输入框 -->
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       number: 0, // 输入框的默认值
-      selectedLanguage: 'C++', // 下拉列表的默认值
+      selectedLanguage: 'java', // 下拉列表的默认值
       code: '', // 代码输入框的默认值
     };
   },
@@ -51,9 +51,21 @@ export default {
       // 在这里添加提交代码的逻辑
 
       if (this.number === '') window.alert('题目不能为空');
-      console.log(this.number);
-      console.log(this.code);
-      // 可以将数据提交到后端或执行其他操作
+      // console.log(this.number);
+      // console.log(this.code);
+      this.$api.get('/api/submission/',{
+        problem_id: this.number,
+        language: this.selectedLanguage,
+        code: this.code,
+        userid: 1,
+      })
+      .then(response => {
+          console.log(response.data.status_msg);
+          window.alert('提交成功');
+      })
+        .catch(error => {
+          console.error(error);
+      });
 
       this.code='';
     },
@@ -69,7 +81,6 @@ export default {
 </script>
   
 <style>
-/* 样式可以根据需要自定义 */
 .form-group {
   margin-bottom: 20px;
 }

@@ -17,6 +17,7 @@
 </template>
   
 <script>
+
 export default {
   data() {
     return {
@@ -28,7 +29,6 @@ export default {
   methods: {
     login() {
       // // 这里可以添加登录逻辑
-
       if (this.username.trim() === '') this.errorMessage = '用户名不能为空';
       else if (this.password.trim() === '') this.errorMessage = '密码不能为空';
       else {
@@ -39,8 +39,15 @@ export default {
           password: this.password
         })
           .then(response => {
-            console.log(response.data.token);
-            window.alert('登录成功');
+            localStorage.setItem('token', response.data.token);
+            location.reload();
+
+            this.$router.push( '/');
+            //重新加载到/homepage
+            // location.href = '/homepage';
+            // location.reload();
+            
+            console.log('//**/*/*/*');
           })
           .catch(error => {
             console.error(error);
