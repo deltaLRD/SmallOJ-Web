@@ -30,11 +30,18 @@
 </template>
   
 <script>
+import { useCookies } from 'vue3-cookies';
 export default {
+  setup() {
+    const { cookies } = useCookies();
+    return { cookies };
+  },
   data() {
     return {
       number: 0, // 输入框的默认值
-      selectedLanguage: 'java', // 下拉列表的默认值
+
+      selectedLanguage: 'Java', // 下拉列表的默认值
+
       code: '', // 代码输入框的默认值
     };
   },
@@ -50,24 +57,49 @@ export default {
     submitCode() {
       // 在这里添加提交代码的逻辑
 
-      if (this.number === '') window.alert('题目不能为空');
-      // console.log(this.number);
-      // console.log(this.code);
-      this.$api.get('/api/submission/',{
-        problem_id: this.number,
-        language: this.selectedLanguage,
-        code: this.code,
-        userid: 1,
+      const userid = this.cookies.get("userid");
+      if (userid === '') {
+        window.alert("请登录");
+        return;
+      }
+      if (this.number === '') {
+        window.alert('题目不能为空');
+        return;
+      }
+      console.log(this.number);
+      console.log(this.code);
+      const form_data = new FormData();
+      form_data.append("problem_id",this.number);
+      form_data.append("language", this.selectedLanguage);
+      form_data.append("code", this.code);
+      form_data.append("userid", userid);
+      // 可以将数据提交到后端或执行其他操作
+      
+      // this.$api.post("/api/submission/", {
+      //   problem_id: this.number,
+      //   language: this.selectedLanguage,
+      //   code: this.code,
+      //   userid: userid
+      // },
+      // { "Content-Type": "multipart/form-data" })
+      this.$api({
+        method: "post",
+        url: "/api/submission/",
+        data: form_data,
+        headers: {"Content-Type": "application/form-data"},
       })
       .then(response => {
-          console.log(response.data.status_msg);
+        console.log(response);
+        if (response.data.status_code === 'Failed') {
+          window.alert('提交失败');
+        } else {
           window.alert('提交成功');
-      })
-        .catch(error => {
-          console.error(error);
+        }
+      }).catch(error => {
+        console.error(error);
       });
+      this.code = '';
 
-      this.code='';
     },
     getCookie(name) {
       const cookieValue = document.cookie
