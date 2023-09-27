@@ -24,7 +24,7 @@
                         </RouterLink>
                     </td>
                     <td>
-                        <RouterLink to="/question_bank/submit" class="link-style"
+                        <RouterLink to="/question_bank/submit" class="link-style submit"
                             @click="storeItemID(item.id)">submit</RouterLink>
                     </td>
                 </tr>
@@ -86,4 +86,10 @@ th, td {
   text-align: left; /* 文本左对齐，可根据需要调整 */
 }
 
+.submit{
+    color:white;
+}
+.submit:hover{
+    color:greenyellow;
+}
 </style>

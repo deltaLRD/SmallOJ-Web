@@ -9,8 +9,8 @@ import submissions from '../Navigation/QuestionBank/Submissions.vue'
 import questions from '../Navigation/QuestionBank/Questions.vue'
 import submit from '../Navigation/QuestionBank/Submit.vue'
 import question_description from '../Navigation/Element/QueDescription.vue'
-
-
+import subtopic from '../Navigation/QuestionBank/SubTopic.vue'
+import subsample from '../Navigation/QuestionBank/SubSample.vue'
 const routes = [
     { path: '/', redirect: '/homepage' },
     { path: '/question_bank', redirect: '/question_bank/questions'},
@@ -20,7 +20,9 @@ const routes = [
       children: [{ path: 'submissions', component: submissions },
                  { path: 'questions', component: questions },
                  { path: 'submit',component: submit},
-                 { path: 'question_description',component: question_description}]
+                 { path: 'question_description',component: question_description},
+                 { path: 'submit_topic',component: subtopic},
+                 { path: 'submit_sample',component: subsample}]
     },
     { path: '/help', component: help },
     { path: '/login', component: login },

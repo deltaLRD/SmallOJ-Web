@@ -50,14 +50,11 @@ export default {
           .then(response => {
 
             localStorage.setItem('token', response.data.token);
-            location.reload();
-
-            this.$router.push( '/');
-            //重新加载到/homepage
-            // location.href = '/homepage';
             // location.reload();
-            
-            console.log('//**/*/*/*');
+            //等待一秒
+            setTimeout(() => {
+              location.href = '/homepage';
+            }, 1000);
 
             console.log(response.data);
             this.cookies.set("userid", response.data.id);

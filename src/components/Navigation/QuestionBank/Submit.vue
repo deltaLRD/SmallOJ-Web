@@ -12,7 +12,7 @@
         <label for="languageSelect" style="color: white;">编程语言：</label>
         <select id="languageSelect" v-model="selectedLanguage">
           <option value="python3">Python</option>
-          <option value="java">Java</option>
+          <option value="Java">Java</option>
           <option value="c++">C++</option>
           <option value="c">C</option>
         </select>
@@ -24,7 +24,7 @@
       </div>
 
       <!-- 提交按钮 -->
-      <button type="submit" class="sub">提交</button>
+      <button type="submit" class="sub" >提交</button>
     </form>
   </div>
 </template>
@@ -39,9 +39,7 @@ export default {
   data() {
     return {
       number: 0, // 输入框的默认值
-
       selectedLanguage: 'Java', // 下拉列表的默认值
-
       code: '', // 代码输入框的默认值
     };
   },
@@ -56,7 +54,6 @@ export default {
   methods: {
     submitCode() {
       // 在这里添加提交代码的逻辑
-
       const userid = this.cookies.get("userid");
       if (userid === '') {
         window.alert("请登录");
