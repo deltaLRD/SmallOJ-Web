@@ -11,10 +11,10 @@
       <div class="form-group">
         <label for="languageSelect" style="color: white;">编程语言：</label>
         <select id="languageSelect" v-model="selectedLanguage">
-          <option value="Python3">Python</option>
-          <option value="Java">Java</option>
-          <option value="C++">C++</option>
-          <option value="C">C</option>
+          <option value="python3">Python</option>
+          <option value="java">Java</option>
+          <option value="c++">C++</option>
+          <option value="c">C</option>
         </select>
       </div>
       <!-- 代码输入框 -->
@@ -39,7 +39,9 @@ export default {
   data() {
     return {
       number: 0, // 输入框的默认值
+
       selectedLanguage: 'Java', // 下拉列表的默认值
+
       code: '', // 代码输入框的默认值
     };
   },
@@ -54,6 +56,7 @@ export default {
   methods: {
     submitCode() {
       // 在这里添加提交代码的逻辑
+
       const userid = this.cookies.get("userid");
       if (userid === '') {
         window.alert("请登录");
@@ -96,6 +99,7 @@ export default {
         console.error(error);
       });
       this.code = '';
+
     },
     getCookie(name) {
       const cookieValue = document.cookie
@@ -109,7 +113,6 @@ export default {
 </script>
   
 <style>
-/* 样式可以根据需要自定义 */
 .form-group {
   margin-bottom: 20px;
 }
