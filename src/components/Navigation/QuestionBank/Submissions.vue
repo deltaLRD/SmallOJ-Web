@@ -1,7 +1,33 @@
 <template>
-  <h1>
-    Submissions
-  </h1>
+    <div>
+        <table>
+            <thead>
+                <tr style="background-color: rgb(92, 92, 92);">
+                    <th style="width: 3%; color: white;text-align: center;">用户</th>
+                    <th style="width: auto; color: white;">题目</th>
+                    <th style="width: 10%;color: white;">提交数</th>
+                    <th style="width: 10%;color: white;">通过数</th>
+                </tr>
+            </thead>
+            <tbody >
+                <!-- 使用 v-for 渲染数据 -->
+                <tr  v-for="msg in info" :key="msg.id" >
+                    <td style="padding: 8px;">
+                      {{ msg.username }}
+                    </td>
+                    <td>
+                      {{ msg.problemName }}
+                    </td>
+                    <td>
+                      {{ msg.testcaseCount }}
+                    </td>
+                    <td>
+                      {{ msg.passCount }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 
@@ -11,14 +37,23 @@
 export default {
   data() {
     return {
-
+      info: [
+        {
+            "username": "Lird2002",
+            "problemName": "A+B",
+            "testcaseCount": 1,
+            "passCount": 1,
+            "id": 170663065100,
+        }
+    ],
     };
   },
   created: function () {
     this.$api.get('/api/submission/')
       .then(response => {
-
-        console.log(response.data);
+        if (response.data.status_code == 'Success') {
+          this.info=response.data.submissionInfos;
+        }
       })
       .catch(error => {
         console.error(error);
@@ -53,3 +88,18 @@ export default {
     ]
 }
 -->
+
+<style scoped>
+table {
+  border-collapse: collapse; /* 合并边框，使边框更紧凑 */
+  width: 100%; /* 表格宽度100% */
+  border: 3px solid gray; /* 表格的外边框样式 */
+  border-radius: 50px;
+}
+
+th, td {
+  border: 3px solid gray; /* 单元格的边框样式 */
+  padding: 8px; /* 单元格内边距，可根据需要调整 */
+  text-align: left; /* 文本左对齐，可根据需要调整 */
+}
+</style>
