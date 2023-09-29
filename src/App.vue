@@ -1,7 +1,7 @@
 <script setup>
 import Top from './components/Top.vue'
 import Navigation from './components/Navigation.vue'
-// import Footer from './components/Footer.vue'
+import Footer from './components/Footer.vue'
 
 
 
@@ -13,7 +13,9 @@ import Navigation from './components/Navigation.vue'
   <div style="width: 80%; text-align: center; margin: auto;margin-top: 50px;">
     <Top/><br/>
     <Navigation />
+    
     <RouterView></RouterView>
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 

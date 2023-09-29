@@ -2,15 +2,22 @@
     <h1 style="color: white;">
         Question{{ itemID  }}
     </h1>
-    <a>{{description}}</a>
+    <div v-html="markdownToHtml"></div>
 </template>
 
 <script>
+import {marked} from 'marked';
+
 export default {
+     computed: {
+        markdownToHtml() {
+            return marked(this.description);
+        },
+    },
     data() {
         return {
             itemID: 0,
-            description: '',
+            description: '+ 00',
         };
     },
     created() {

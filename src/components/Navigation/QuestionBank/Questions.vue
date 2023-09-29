@@ -25,7 +25,7 @@
                     </td>
                     <td>
                         <RouterLink to="/question_bank/submit" class="link-style submit"
-                            @click="storeItemID(item.id)">submit</RouterLink>
+                            @click="storeItemID(item.id)">&nbsp;&nbsp;◡̈⃝&nbsp;&nbsp;</RouterLink>
                     </td>
                 </tr>
             </tbody>

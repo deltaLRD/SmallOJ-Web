@@ -50,18 +50,13 @@ import { useCookies } from 'vue3-cookies';
           return;
         }
         if (this.number === '') {
-          window.alert('题目不能为空');
+          window.alert('题目号不能为空');
           return;
         }
-        const form_data = new FormData();
-        form_data.append("language", this.selectedLanguage);
-        form_data.append("question", this.question);
-        form_data.append("userid", userid);
-        this.$api({
-          method: "post",
-          url: "/api/problem/",
-          data: form_data,
-          headers: {"Content-Type": "application/form-data"},
+        this.$api.post("/api/problem/",{
+          name: this.name,
+          level: this.level,
+          question: this.question,
         })
         .then(response => {
           console.log(response.data);
